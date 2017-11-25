@@ -1,0 +1,136 @@
+// Consept: "team/designer/4 > localstorage > "team_designer_4"
+
+// https://www.youtube.com/watch?v=COKdtOgopWQ
+// https://www.html5rocks.com/en/tutorials/offline/quota-research/
+// http://mstumpp.github.io/chain.js/
+// https://stackoverflow.com/questions/12679642/how-to-detect-chained-function-calls-in-javascript
+
+counter=4
+continue/pause=true/false
+payload
+
+// features:
+- getSize() size of the storage location
+- sizeWarning()
+- isOnline()
+- 
+- idle? > method start stop timer
+ 	- scroll
+	- mouse
+	- key
+- compress
+- 
+
+// shortcuts:
+
+i: internet
+c: cookies
+ls: localStorrage
+ss: sessionStorage
+idb: IndexDB
+
+
+var succesSource = "ls" // hvis den returnere med succes første gang så bliver denne variabel sat
+var failedSource = ['ls','c']
+
+network.get("team/designer/4", promiseconfig)...
+	.ls() // hvis der er succes, så prøver den ikke at hente fra andre steder
+	.i()
+	.lsUpdate() // Only update on changes
+	.get("team/designer/4", promiseconfig)
+	.ls() // hvis der er succes, så prøver den ikke at hente fra andre steder
+	.i()
+	.timeout(3000)
+	.all(['i', '']) // fastest resond
+	.fastest(['i', ''])
+
+	.succes()
+	.failure()
+
+network.set("team/$1/$2").
+	.lsFirst()
+	.iFirst()
+	.all() // fastest respond
+
+	.succes(functionToRun())
+	.error(functionToRun())
+	.errorMessage()
+		["error","No internet Connection"]
+
+network.delete()
+
+network.deleteAll()
+
+network.set("team/$1/$2").startService("nameOfService", miliseconds/trigger)
+
+// do something when idle
+.idleOnce()
+network.set("team/$1/$2").startService("idle", miliseconds/trigger)
+
+network.set("team/$1/$2").startService("offline", miliseconds/trigger)
+
+network.set("team/$1/$2").startService("online", miliseconds/trigger)
+
+network.stopService("nameOfService", miliseconds/trigger)
+
+network.init() // start the program
+network.exit() // end the program
+
+network.addToQueue() // start the program
+network.deleteFromQueue() // end the program
+network.queue().go()
+network.take(5).go()
+network.driver() // her kan man konfigurere flere steder den skal hente fra
+
+.localstorage()
+.ls() // shorthand version
+
+.go() / .do()  / .result() / .run() hvis der absolut skal en sidste kode
+.isOffline() kalde en function hvis den er offline.
+
+
+============== eventult: =================
+.i("driverName")
+.i("axios")
+.i("promises")
+.i("fetct")
+
+.jsonparse()
+.jsonparse( , transform options)
+.isAuth()
+.redirect()
+----------------------------------
+.if("succes", "failure")
+
+.jumphere("succes")
+
+.jumphere("failure")
+
+exemple:
+
+network.get("team/designer/4", promiseconfig)
+	.i().if("succes", "failure")
+
+	.jumphere("succes").updateLocalStorage().redirect()
+
+	.jumphere("failure").ls()
+
+kan foreksempel returnere et object med navnene, om de lykkeredes
+
+network.get(...)
+	.i("getDesigner")
+	.updateLs('saveStorage')
+	.result()
+Returnere:
+{
+getDesigner: true,
+saveStorage: true
+}
+
+Her forklare den om resultatet lykkedes
+
+----------------------------
+
+
+.returnResult()
+.returnBool()
