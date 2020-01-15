@@ -23,22 +23,22 @@ payload
 
 // shortcuts:
 
-i: internet
+i: internet eller 'url', 'web' i stedet
 c: cookies
 ls: localStorrage
 ss: sessionStorage
 idb: IndexDB
 
 
-var succesSource = "ls" // hvis den returnere med succes første gang så bliver denne variabel sat
+var succesSource = "ls" // hvis den returnere med succes fï¿½rste gang sï¿½ bliver denne variabel sat
 var failedSource = ['ls','c']
 
 network.get("team/designer/4", promiseconfig)...
-	.ls() // hvis der er succes, så prøver den ikke at hente fra andre steder
+	.ls() // hvis der er succes, sï¿½ prï¿½ver den ikke at hente fra andre steder
 	.i()
 	.lsUpdate() // Only update on changes
 	.get("team/designer/4", promiseconfig)
-	.ls() // hvis der er succes, så prøver den ikke at hente fra andre steder
+	.ls() // hvis der er succes, sï¿½ prï¿½ver den ikke at hente fra andre steder
 	.i()
 	.timeout(3000)
 	.all(['i', '']) // fastest resond
@@ -85,7 +85,7 @@ network.driver() // her kan man konfigurere flere steder den skal hente fra
 .localstorage()
 .ls() // shorthand version
 
-.go() / .do()  / .result() / .run() hvis der absolut skal en sidste kode
+.done() / .go() / .do()  / .result() / .run() hvis der absolut skal en sidste kode
 .isOffline() kalde en function hvis den er offline.
 
 

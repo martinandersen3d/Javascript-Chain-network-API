@@ -1,0 +1,36 @@
+{
+  "name": "javascript-chain-network-api",
+  "version": "0.0.1",
+  "description": "Easy chain Get and Set data from internet, localStorage, cookies.",
+  "main": "network.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinandersen3d/Javascript-Chain-network-API.git"
+  },
+  "keywords": [
+    "javascript",
+    "chain",
+    "chaining",
+    "localStorage",
+    "cookies",
+    "server",
+    "internet",
+    "get",
+    "setframework"
+  ],
+  "author": "Martin Andersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinandersen3d/Javascript-Chain-network-API/issues"
+  },
+  "homepage": "https://github.com/martinandersen3d/Javascript-Chain-network-API#readme",
+  "dependencies": {
+    "axios": "^0.17.1"
+  },
+  "devDependencies": {
+    "node-localstorage": "^1.3.0"
+  }
+}
